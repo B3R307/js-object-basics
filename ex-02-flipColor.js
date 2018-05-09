@@ -8,7 +8,16 @@
  * vice-versa.
 */
 
-
+function flipColor(someObj){
+var newObj = {someObj}
+if( someObj.color === "blue"){
+   someObj.color = "red"
+} else if ( someObj.color === "red"){
+   someObj.color = "blue"
+  }
+  console.log(someObj);
+  return someObj
+}
 
 
 

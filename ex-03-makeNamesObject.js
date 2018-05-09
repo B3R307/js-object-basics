@@ -20,10 +20,35 @@
 */
 
 
+function makeNamesObject(str1, str2, str3){
+  var newObj = {}
+  // console.log(str1);
+  // console.log(str2);
+  // console.log(str3);
+
+    var strN1 = str1.split(' ');
+    // console.log(strN1);
+    var strN2 = str2.split(' ');
+    // console.log(strN2);
+    var strN3 = str3.split(' ');
+    // console.log(strN3);
+
+    newObj = {
+      [strN1[0]]: strN1[1],
+      [strN2[0]]: strN2[1],
+      [strN3[0]]: strN3[1],
+   }
+     // console.log(strN1, strN2, strN3);
+     // console.log(newObj);
+     return newObj
+
+
+}
 
 
 
 
+// strN1 = `${str1.split(' ')} ${str2.split(' ')} ${str3.split(' ')}`
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 var greatMenObj = makeNamesObject("George Washington", "Abe Lincoln", "Kanye West")

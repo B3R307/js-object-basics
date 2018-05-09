@@ -18,13 +18,74 @@
  *  ( see GROUP2 - GROUP4 console.assert() )
 **/
 
+function createCarRecord(strMk, strModl, num, strLisc){
+  // console.log(strMk, strModl, num, strLisc);
+   var newOb = {}
+   var mk = typeof strMk
+   var md = typeof strModl
+   var nu = typeof num
+   var lis = typeof strLisc
+   // console.log(mk);
+   // console.log(md);
+   // console.log(nu);
+   // console.log(lis);
 
+    if(mk === 'undefined' && md === 'undefined' && nu === 'undefined' && lis === 'undefined'){
+        newOb = 'new record must have make, model, year, and license values'
+        return newOb
+     }  else if(mk !== 'string' && md !== 'string' && nu !== 'number' && lis === 'string'){
+        newOb = '1ts and 2nd arguments must be String and 3rd arguments must be a number'
+        return newOb
+     }  else if(mk === 'string' && md !== 'string' && nu !== 'number' && lis !== 'string'){
+        newOb = '2nd and 4th arguments must be String and 3rd arguments must be a number'
+        return newOb
+     }  else if(mk !== 'string' && md === 'string' && nu !== 'number' && lis !== 'string'){
+         newOb = '1st and 4th arguments must be String and 3rd arguments must be a number'
+         return newOb
+     }  else if(mk !== 'string' && md === 'string' && nu !== 'number' && lis === 'string'){
+        newOb = '1st argument must be a String and 3rd argument must be a Number'
+        return newOb
+     }  else if(mk !== 'string' && md !== 'string' && nu === 'number' && lis !== 'string'){
+        newOb = '1st, 2nd, and 4th arguments must be String'
+        return newOb
+     }  else if(mk === 'string' && md !== 'string' && nu !== 'number' && lis === 'string'){
+        newOb = '2nd argument must be a String and 3rd argument must be a Number'
+        return newOb
+     }  else if(mk === 'string' && md === 'string' && nu !== 'number' && lis !== 'string'){
+        newOb = ('3rd argument must be a Number and 4th argument must be a String' )
+        return newOb
+     } else if(mk !== 'string' && md !== 'string' && nu === 'number' && lis === 'string'){
+       newOb = '1ts and 2nd arguments must be String'
+       return newOb
+     }  else if(mk === 'string' && md !== 'string' && nu === 'number' && lis !== 'string'){
+       newOb = '2nd and 4th arguments must be String'
+       return newOb
+     } else if(mk !== 'string' && md === 'string' && nu === 'number' && lis !== 'string'){
+       newOb = '1st and 4th arguments must be String'
+       return newOb
+     } else if(mk !== 'string'){
+       newOb = '1st argument must be a String'
+       return newOb
+     } else if(md !== 'string'){
+       newOb = '2nd argument must be a String'
+       return newOb
+     } else if(nu !== 'number'){
+       newOb = '3rd argument must be a Number'
+       return newOb
+     } else if(lis !== 'string'){
+       newOb = '4th argument must be a String'
+       return newOb
+     }
 
-
-
-
-
-
+     newOb ={
+     make: strMk,
+     model: strModl,
+     year: num,
+     plate: strLisc
+    }
+    console.log(newOb);
+    return newOb
+  }
 
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
@@ -41,8 +102,6 @@ var newCar6 = createCarRecord('Ferrari', true, 2015, 'K9KPL2' )
 var newCar7 = createCarRecord( true, 'Spider', 2012, 93933)
 // ---------------------------
 var newCar8 = createCarRecord( 'Ferrari', 'Spider', '2013', '8IOL32')
-
-
 console.assert( typeof newCar1 === 'object')
 console.assert( newCar1.make === "Ford" && newCar1.model === "Pinto")
 console.assert( newCar2.make === "Pontiac" && newCar2.year === 2001)

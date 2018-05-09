@@ -13,12 +13,23 @@
  * createHtmlElement(htmlObj)
  *  => '<h1 class="grid small-section">Lorem ipsum dolor sit amet.</h1>'
 */
+ function createHtmlElement(obj){
+   var htmlObj = ''
+   var element = obj.element
+   var text = obj.textContent
+   var classN = obj.classNames
+   htmlObj = `<${element} class="${classN}">${text}</${element}>`
+   console.log(htmlObj)
+   return htmlObj
 
-
-
-
-
-
+//
+// for(var property in obj){
+//   var objEl = obj[property]
+//   strHtml += objEl
+// }
+// console.log(strHtml);
+//    return strHtml
+ }
 //*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
 var exampleObj1 = {
@@ -45,4 +56,4 @@ var htmlString3 = createHtmlElement(exampleObj3)
 
 console.assert(htmlString1 === '<p class="featured-section">This is so freaking cool!</p>')
 console.assert(htmlString2 === '<h2 class="ui-card-title bg--inverse">Bill Brasky</h2>')
-console.assert(htmlString2 === '<span class="highlight text-important">This is an important message.</span>')
+console.assert(htmlString3 === '<span class="highlight text-important">This is an important message.</span>')
